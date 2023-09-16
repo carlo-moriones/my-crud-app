@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 use App\Http\Controllers\BookController;
+use Inertia\Inertia;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,5 @@ Route::get('/', function () {
 });
 
 Route::get('books/create',[BookController::class,'create']);
+Route::get('books',[BookController::class,'index'])->name('books.index');
+Route::get('books',[BookController::class,'add']);
