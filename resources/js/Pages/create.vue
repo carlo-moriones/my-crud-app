@@ -2,6 +2,10 @@
 import { useForm } from '@inertiajs/vue3';
 import { router } from '@inertiajs/vue3';
 
+defineProps({
+  errors:Object
+});
+
 const form = useForm({
     title:null,
     author:null,
@@ -15,6 +19,7 @@ function submit(){
 
 
 <template>
+  <br>
 <div class="card">
   <div class="card-header">
     Books
@@ -24,11 +29,13 @@ function submit(){
   <div class="mb-3">
     <label for="bookTitle" class="form-label">Title</label>
     <input type="text" id="bookTitle" v-model="form.title" class="form-control">
-    
+    <div class="text-danger text-xs" v-if="errors.title">{{ errors.title }}</div>
+
   </div>
   <div class="mb-3">
     <label for="bookAuthor" class="form-label">Author</label>
     <input type="text" id="bookAuthor" v-model="form.author" class="form-control">
+    <div class="text-danger text-xs" v-if="errors.author">{{ errors.author }}</div>
   </div>
   
   <button type="submit" class="btn btn-primary">Submit</button>

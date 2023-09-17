@@ -22,4 +22,4 @@ Route::get('/', function () {
 
 Route::get('books/create',[BookController::class,'create']);
 Route::get('books',[BookController::class,'index'])->name('books.index');
-Route::get('books',[BookController::class,'add']);
+Route::post('books',[BookController::class,'store']);
