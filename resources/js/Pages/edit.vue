@@ -1,31 +1,31 @@
 <script setup>
-import { useForm } from '@inertiajs/vue3';
-import { router } from '@inertiajs/vue3';
+import {useForm} from '@inertiajs/vue3';
+import {router} from '@inertiajs/vue3';
 
-defineProps({
-  errors:Object
+const props=defineProps({
+    errors: Object,
+    book: Object
 });
 
 const form = useForm({
-    title:null,
-    author:null,
+    title:props.book.title,
+    author:props.book.author,
 });
 
-function submit(){
-    router.post('/books',form);
-
-};
+function submit(id) {
+    //alert(id);
+    router.put('/books/'+id,form);
+}
 </script>
-
 
 <template>
 <br>
 <div class="card col-6 offset-3">
   <div class="card-header">
-    Books
+    Edit a Book
   </div>
   <div class="card-body">
-    <form @submit.prevent="submit">
+    <form @submit.prevent="submit(book.id)">
   <div class="mb-3">
     <label for="bookTitle" class="form-label">Title</label>
     <input type="text" id="bookTitle" v-model="form.title" class="form-control">

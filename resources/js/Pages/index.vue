@@ -6,6 +6,11 @@ function destroy(id) {
     //alert(id);
     router.delete('/books/'+id);
 }
+
+function edit(id) {
+    //alert(id);
+    router.get('/books/'+id+'/edit');
+}
 </script>
 
 <template>
@@ -26,7 +31,7 @@ function destroy(id) {
                     <td>{{ book.title }}</td>
                     <td>{{ book.author }}</td>
                     <td>
-                        <button class="btn btn-outline-primary">Edit</button>
+                        <button @click="edit(book.bookId)" class="btn btn-outline-primary">Edit</button>
                         <button @click="destroy(book.bookId)" class="btn btn-outline-danger">Delete</button>
                     </td>
                 </tr>

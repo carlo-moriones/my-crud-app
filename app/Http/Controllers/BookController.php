@@ -36,6 +36,25 @@ class BookController extends Controller
         return Redirect::route('books.index');
     }
 
+
+    public function edit(Book $book) {
+        return Inertia::render('edit',[
+            'book'=>$book
+        ]);
+
+    }
+    
+    public function update(Request $request, Book $book){
+        $validated = $request->validate([
+            'title'=>'required|max:255',
+            'author'=>'required',
+        ]);
+
+        $book->update($validated);
+        
+        return Redirect::route('books.index');
+    }
+
     public function destroy(Book $book) {
         //$book = Book::findOrFail($id);
         $book->delete();
