@@ -1,7 +1,7 @@
 
 # Coding Challenge
 
-This code is for Technical Challenge for Laravel Developer.
+This code is for Technical Challenge for Laravel Developer. Add/Edit/Delete function is working.
 URL:localhost/books
 - **[localhost/books](http://localhost/books)**
 
