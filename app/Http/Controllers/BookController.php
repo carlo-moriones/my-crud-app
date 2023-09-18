@@ -13,6 +13,7 @@ class BookController extends Controller
         return Inertia::render('index',[
             'books'=>Book::all()->map(function($book) {
                 return [
+                    'bookId'=>$book->id,
                     'title'=>$book->title,
                     'author'=>$book->author,
                 ];
