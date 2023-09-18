@@ -23,3 +23,4 @@ Route::get('/', function () {
 Route::get('books/create',[BookController::class,'create']);
 Route::get('books',[BookController::class,'index'])->name('books.index');
 Route::post('books',[BookController::class,'store']);
+Route::delete('books/{book}',[BookController::class,'destroy']);

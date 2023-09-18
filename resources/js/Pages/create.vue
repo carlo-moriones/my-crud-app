@@ -20,7 +20,7 @@ function submit(){
 
 <template>
   <br>
-<div class="card">
+<div class="card col-6 offset-3">
   <div class="card-header">
     Books
   </div>

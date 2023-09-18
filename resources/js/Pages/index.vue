@@ -1,8 +1,10 @@
 <script setup>
 defineProps({books:Object});
+import{router} from '@inertiajs/vue3';
 
 function destroy(id) {
-    alert(id);
+    //alert(id);
+    router.delete('/books/'+id);
 }
 </script>
 
@@ -12,7 +14,7 @@ function destroy(id) {
         <table class="table table-bordered table-hover table-small">
             <thead>
                 <tr>
-                    <th>Book ID</th>
+                    <th>ID</th>
                     <th>Title</th>
                     <th>Author</th>
                     <th>Action</th>
