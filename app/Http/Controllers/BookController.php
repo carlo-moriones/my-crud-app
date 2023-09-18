@@ -33,7 +33,8 @@ class BookController extends Controller
 
         Book::create($validated);
 
-        return Redirect::route('books.index');
+        return Redirect::route('books.index')->with('message','Book created successfully');
+
     }
 
 
@@ -52,12 +53,12 @@ class BookController extends Controller
 
         $book->update($validated);
         
-        return Redirect::route('books.index');
+        return Redirect::route('books.index')->with('message','Book updated successfully');;
     }
 
     public function destroy(Book $book) {
         //$book = Book::findOrFail($id);
         $book->delete();
-        return Redirect::route('books.index');
+        return Redirect::route('books.index')->with('message','Book deleted successfully');;
     }
 }

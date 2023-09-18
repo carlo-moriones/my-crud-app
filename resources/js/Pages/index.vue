@@ -15,7 +15,17 @@ function edit(id) {
 
 <template>
     <br>
+
+    <div class="col-6 offset-3">
+        <div v-if="$page.props.flash.message" class="alert alert-success">
+            <strong>{{ $page.props.flash.message }}</strong>
+        </div>
+    </div>
+
     <div class="card col-6 offset-3">
+        <div class="card-header">
+        Create a Book
+    </div>
         <table class="table table-bordered table-hover table-small">
             <thead>
                 <tr>
@@ -36,7 +46,6 @@ function edit(id) {
                     </td>
                 </tr>
             </tbody>
-            
         </table>
     </div>
 </template>
